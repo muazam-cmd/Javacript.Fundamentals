@@ -1,14 +1,14 @@
-// Operations through console
+// typeof 
 
-console.log(5 + 4 * 23);
+let number = 43;
+let float = 22.22;
+let string = 'hey';
+let javaScript = true;
 
-// Storing Values in variables and displaying
+console.log(typeof string);
 
-let myFirstName = 'Muazam';
-let secondName = 'Mzm';
 
-let myAge = '25';
-let myProfession = 'Software Engineer';
+// undefined!
 
-console.log(myProfession);
-
+let year;
+console.log(typeof year);
