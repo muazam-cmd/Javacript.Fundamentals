@@ -28,6 +28,38 @@ const johnBMI = johnMass / (johnHeight * johnHeight);
 const markHigherBmi = MarkBMI > johnBMI;
 
 // printing results
-console.log(`marks bmi: ${MarkBMI}`);
-console.log(`john bmi: ${johnBMI}`);
-console.log(`Mark has a higher Bmi than john: ${markHigherBmi}`);
+// console.log(`marks bmi: ${MarkBMI}`);
+// console.log(`john bmi: ${johnBMI}`);
+// console.log(`Mark has a higher Bmi than john: ${markHigherBmi}`);
+
+
+// String and template literals:
+
+// const firstName = 'Muazam'
+// const birthYear = 1999;
+// const year = 2023;
+// const Job = 'Software Engineer';
+
+// const mzm = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + Job + '!';
+// console.log(mzm);
+// const NewMzm = `I am ${firstName}, a ${year - birthYear} years old ${Job} !`;
+// console.log(NewMzm);
+
+// Challenge 2
+
+// Use the BMI example from Challenge #1, and the code you already wrote, and
+// improve it.
+// Your tasks:
+// 1. Print a nice output to the console, saying who has the higher BMI. The message
+// is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+// 2. Use a template literal to include the BMI values in the outputs. Example: "Mark's
+// BMI (28.3) is higher than John's (23.9)!"
+// Hint: Use an if/else statement
+
+if (MarkBMI > johnBMI) {
+    console.log(`Mark BMI ${MarkBMI} is higher than John's BMI ${johnBMI}`);
+} else {
+    console.log(`John's BMI ${johnBMI} is higher than Mark's ${MarkBMI}!`)
+}
+
+
