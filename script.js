@@ -112,9 +112,8 @@
 // Test data:
 // § Data 1: Test for bill values 275, 40 and 430
 
+// Same Task implementation: ( if else statements ):
 
-const bill = 275;
+// const tip = bill <= 300 && bill >= 50 ? bill * (15 / 100) : bill * (20 / 100)
 
-const tip = bill <= 300 && bill >= 50 ? bill * (15 / 100) : bill * (20 / 100)
-
-console.log(`The Bill was ${bill}, the tip was ${tip}, and the total value is ${bill + tip}`);
+// console.log(`The Bill was ${bill}, the tip was ${tip}, and the total value is ${bill + tip}`);
