@@ -10,7 +10,7 @@
 // // const interface = 'Audio';
 // // const private = 534;
 
-// Functions
+// //////////////////////////////////////////////////////////////Functions
 
 // function logger() {
 //     console.log(`We are programmers!`)
@@ -21,7 +21,7 @@
 // logger();
 // logger();
 
-// fruitProcessor function
+///////////////////////////////////////////////////////// fruitProcessor function
 
 // function fruitProcessor(apples, oranges) {
 //     // console.log(`${apples} apples, ${oranges} oranges`);
@@ -34,18 +34,41 @@
 
 // console.log(fruitProcessor(2, 4));
 
-// Function Declaration:
+/////////////////////////////////////////////////// Function Declaration:
 
-function calcAge1(birthYear) {
-    return 2023 - birthYear;
+// function calcAge1(birthYear) {
+//     return 2023 - birthYear;
+// }
+// const age1 = calcAge1(1997);
+// console.log(`I am ${age1} years old`);
+
+//////////////////////////////////////////////// // Function Expression
+
+// const calcAge2 = function (birthYear) {
+//     return 2023 - birthYear;
+// }
+// const age2 = calcAge2(1999);
+// console.log(age1, age2);
+
+////////////////////////////////////////////////////// Arrow Functions:
+
+// const calcAge3 = birthYear => 2023 - birthYear;
+// const age3 = calcAge3(1999);
+// console.log(age3);
+
+//////////////////////////////////////////////////// Function Calling Other Functions
+
+
+function cutPieces(fruit) {
+    return (fruit * 4);
 }
-const age1 = calcAge1(1997);
-console.log(`I am ${age1} years old`);
 
-// Function Expression
+function fruitProcessor(apples, oranges) {
 
-const calcAge2 = function (birthYear) {
-    return 2023 - birthYear;
+    const applePieces = cutPieces(apples);
+    const orangePieces = cutPieces(oranges);
+
+    const juice = `juice with ${applePieces} pieces of apple and ${orangePieces} pieces of oranges.`
+    return juice;
 }
-const age2 = calcAge2(1999);
-console.log(age1, age2);
+console.log(fruitProcessor(2, 3));
