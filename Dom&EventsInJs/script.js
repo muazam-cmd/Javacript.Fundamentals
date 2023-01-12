@@ -12,6 +12,7 @@
 
 let SecretNumber = Math.trunc(Math.random() * 20) + 1;
 let Score = 20;
+let HighScore = 0;
 
 document.querySelector('.check').addEventListener
     ('click', function () {
@@ -30,10 +31,16 @@ document.querySelector('.check').addEventListener
 
             document.querySelector('body').style.backgroundColor = '#60b347';
             document.querySelector('.number').style.width = '30rem';
+
+            if (Score > HighScore) {
+                HighScore = Score;
+                document.querySelector('.highscore').textContent = HighScore;
+            }
             // when Guess is too high
-        } else if (guess > SecretNumber) {
+        } else if (guess !== SecretNumber) {
             if (Score > 1) {
-                document.querySelector('.message').textContent = '📈 Too High'
+                document.querySelector('.message').textContent = guess > SecretNumber ? '📈 Too High' :
+                    '📉 Too low';
                 Score--;
                 document.querySelector('.score').textContent = Score;
 
@@ -43,22 +50,33 @@ document.querySelector('.check').addEventListener
                 document.querySelector('body').style.backgroundColor = 'red';
                 document.querySelector('.number').style.width = '30rem';
             }
-
-            // when Guess is too low
-        } else if (guess < SecretNumber) {
-            if (Score > 1) {
-                document.querySelector('.message').textContent = '📉 Too low'
-                Score--;
-                document.querySelector('.score').textContent = Score;
-            } else {
-                document.querySelector('.message').textContent = '💥 You lost the game!';
-                document.querySelector('.score').textContent = 0;
-            }
         }
+        //     else if (guess > SecretNumber) {
+        //         if (Score > 1) {
+        //             document.querySelector('.message').textContent = '📈 Too High'
+        //             Score--;
+        //             document.querySelector('.score').textContent = Score;
+
+        //         } else {
+        //             document.querySelector('.message').textContent = '💥 You lost the game!';
+        //             document.querySelector('.score').textContent = 0;
+        //             document.querySelector('body').style.backgroundColor = 'red';
+        //             document.querySelector('.number').style.width = '30rem';
+        //         }
+
+        //         // when Guess is too low
+        //     } else if (guess < SecretNumber) {
+        //         if (Score > 1) {
+        //             document.querySelector('.message').textContent = '📉 Too low'
+        //             Score--;
+        //             document.querySelector('.score').textContent = Score;
+        //         } else {
+        //             document.querySelector('.message').textContent = '💥 You lost the game!';
+        //             document.querySelector('.score').textContent = 0;
+        //         }
+        //     }
     });
-
 /////////////////////////////////// Challenge Doing Again PART!
-
 document.querySelector('.again').addEventListener
     ('click', function () {
         Score = 20;
@@ -71,5 +89,4 @@ document.querySelector('.again').addEventListener
 
         document.querySelector('body').style.backgroundColor = '#222';
         document.querySelector('.number').style.width = '15rem';
-
-    })
+    });
