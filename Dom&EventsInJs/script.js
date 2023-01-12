@@ -10,7 +10,7 @@
 // document.querySelector('.guess').value = 23;
 // console.log(document.querySelector('.guess').value);
 
-const SecretNumber = Math.trunc(Math.random() * 20) + 1;
+let SecretNumber = Math.trunc(Math.random() * 20) + 1;
 let Score = 20;
 
 document.querySelector('.check').addEventListener
@@ -56,3 +56,20 @@ document.querySelector('.check').addEventListener
             }
         }
     });
+
+/////////////////////////////////// Challenge Doing Again PART!
+
+document.querySelector('.again').addEventListener
+    ('click', function () {
+        Score = 20;
+        SecretNumber = Math.trunc(Math.random() * 20) + 1;
+        document.querySelector('.message').textContent = 'Start Guessing ...';
+        document.querySelector('.score').textContent = Score;
+
+        document.querySelector('.number').textContent = '?';
+        document.querySelector('.guess').value = '';
+
+        document.querySelector('body').style.backgroundColor = '#222';
+        document.querySelector('.number').style.width = '15rem';
+
+    })
