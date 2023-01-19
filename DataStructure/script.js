@@ -27,3 +27,6 @@ const restaurant = {
     },
   },
 };
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories)
