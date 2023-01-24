@@ -150,3 +150,15 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // // console.log(MovementsUsd);
 
 // console.log(MovementsDescriptions);
+
+///////////////////////////////////////////////// Filter Method /////////////////////////
+
+const MyValues = movements.filter(function (mov) {
+  return mov > 0;
+})
+console.log(MyValues);
+
+/// In arrow function //////
+
+const MyValues2 = movements.filter(mov => mov > 0);
+console.log(MyValues2);
